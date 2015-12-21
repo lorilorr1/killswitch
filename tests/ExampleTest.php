@@ -12,4 +12,14 @@ class RemitRepositoryTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('KillSwitch\Example', $example);
     }
 
+    /**
+     * @test
+     */
+    public function it_can_call_a_greet_method()
+    {
+        $example = new KillSwitch\Example;
+
+        $this->assertEquals('Hello, World!', $example->demo());
+    }
+
 }
