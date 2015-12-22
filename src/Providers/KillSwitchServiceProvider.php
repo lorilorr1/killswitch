@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use KillSwitch\KillSwitch;
+use Artisan;
 
 class KillSwitchServiceProvider extends ServiceProvider {
 
