@@ -30,8 +30,6 @@ class KillSwitch {
                 'base_uri' => $url,
                 'timeout' => $timeout
             ]);
-
-            $this->readStatusFromHttpRequest();
         }
     }
 
