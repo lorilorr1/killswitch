@@ -12,7 +12,7 @@ class KillSwitchServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        if ($this->app['ks']->status() === false) {
+        if ($this->app['ks']->status() === true) {
             Artisan::call('down');
         }
     }
