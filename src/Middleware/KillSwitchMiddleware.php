@@ -4,6 +4,7 @@ namespace KillSwitch\Middleware;
 
 use Closure;
 use Artisan;
+use App;
 
 class KillSwitchMiddleware
 {
@@ -16,7 +17,7 @@ class KillSwitchMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($this->app['killswitch']->status() === true) {
+        if (App::make('killswitch')->status() === true) {
             Artisan::call('down');
         } else {
             Artisan::call('up');
