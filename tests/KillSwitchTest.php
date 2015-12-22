@@ -2,8 +2,14 @@
 
 class KillSwitchTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var \KillSwitch\KillSwitch
+     */
     private $killswitch;
 
+    /**
+     * KillSwitchTest constructor.
+     */
     public function __construct()
     {
         $this->killswitch = new KillSwitch\KillSwitch;
