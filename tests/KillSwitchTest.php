@@ -46,20 +46,9 @@ class KillSwitchTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_can_activate_the_kill_switch_from_a_url()
+    public function it_will_fail_silently_if_the_switch_url_isnt_accessible()
     {
-        $this->killswitch = new \KillSwitch\KillSwitch('http://localhost:8080');
-
-        $this->assertTrue($this->killswitch->status());
-    }
-
-    /**
-     * @test
-     */
-    public function it_will_throw_an_exception_of_the_url_isnt_accessible()
-    {
-        $this->setExpectedException(KillSwitch\Exceptions\BadUrlException::class);
-        $this->killswitch = new \KillSwitch\KillSwitch('foo');
+        $this->killswitch = new \KillSwitch\KillSwitch('fosddsds!!o');
         $this->killswitch->status();
     }
 

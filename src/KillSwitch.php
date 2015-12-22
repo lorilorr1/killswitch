@@ -26,7 +26,7 @@ class KillSwitch {
         $this->status = false;
 
         if (!is_null($url)) {
-            $this->http = new Client(['base_uri' => $url,  'timeout' => 5.0]);
+            $this->http = new Client(['base_uri' => $url,  'timeout' => 1.5]);
             $this->readStatusFromHttpRequest();
         }
     }
@@ -66,13 +66,15 @@ class KillSwitch {
      */
     private function readStatusFromHttpRequest()
     {
+        $body = null;
+
         try {
             $response = $this->http->request('GET', '/');
+            $body = (string) $response->getBody();
         } catch (\Exception $e) {
-            throw new BadUrlException;
+            // fail silently and assume no kill switch
         }
 
-        $body = (string) $response->getBody();
         $this->status = (strstr($body, 'true')) ? true : false;
     }
 }
