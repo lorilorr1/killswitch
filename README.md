@@ -13,7 +13,7 @@ website operations, your application is NOT dependant on this URL to function.
 * Install via composer `composer require bagwaa/killswitch`
 * Add `KillSwitch\Providers\KillSwitchServiceProvider::class` to the providers array in  `config\app.php`
 * Publish the configuration file with sensible defaults `php artisan vendor:publish` 
-* Add the `KillSwitch\Middleware\KillSwitchMiddleware` class to the middleware array in `app\Http\Kernel.php`
+* Add the `KillSwitch\Middleware\KillSwitchMiddleware::class` to the middleware array in `app\Http\Kernel.php`
 
 As an optional step, you may decide to add the middleware to the `$routeMiddleware` array in `app\Http\Kernel.php` 
 which will then allow you to register this on specific routes instead of every single route.

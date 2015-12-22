@@ -5,7 +5,7 @@ namespace KillSwitch\Middleware;
 use Closure;
 use Artisan;
 
-class KillSwitchMiddlware
+class KillSwitchMiddleware
 {
     /**
      * Handle an incoming request.
