@@ -12,7 +12,7 @@ class KillSwitchTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_can_instanciate()
+    public function it_can_instantiate()
     {
         $this->assertInstanceOf('KillSwitch\KillSwitch', $this->killswitch);
     }
