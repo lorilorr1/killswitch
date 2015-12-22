@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use KillSwitch\KillSwitch;
+use Artisan;
 
 class KillSwitchServiceProvider extends ServiceProvider {
 
@@ -13,7 +14,9 @@ class KillSwitchServiceProvider extends ServiceProvider {
     public function boot()
     {
         if ($this->app['ks']->status() === true) {
-            \Artisan::call('down');
+            Artisan::call('down');
+        } else {
+            Artisan::call('up');
         }
     }
 
