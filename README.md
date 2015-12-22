@@ -7,7 +7,7 @@ leverage, KillSwitch is that leverage.
 
 #### Install the package via composer
 
-`composer require bagwaa/killswitch dev-master`
+`composer require bagwaa/killswitch`
 
 #### Add the service provider class to `config\app.php`
 
