@@ -3,7 +3,6 @@
 namespace KillSwitch;
 
 use GuzzleHttp\Client;
-use KillSwitch\Exceptions\BadUrlException;
 
 class KillSwitch {
 

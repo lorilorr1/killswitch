@@ -17,7 +17,7 @@ class KillSwitchServiceProvider extends ServiceProvider {
             __DIR__ . '/../config' => base_path('config'),
         ]);
 
-        if ($this->app['ks']->status() === true) {
+        if ($this->app['killswitch']->status() === true) {
             Artisan::call('down');
         } else {
             Artisan::call('up');
@@ -31,8 +31,10 @@ class KillSwitchServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $ks = new KillSwitch(config('killswitch.url'));
-        $this->app->instance('ks', $ks);
+        $this->app->instance(
+            'killswitch',
+            new KillSwitch(config('killswitch.url'))
+        );
     }
 
 }
