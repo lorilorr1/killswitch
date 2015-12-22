@@ -12,9 +12,9 @@ class KillSwitchServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        dd($this->app['ks']);
-        // KillSwitch::query()
-        // if query() == false then run command php artisan down
+        if ($this->app['ks']->status() === false) {
+            Artisan::call('down');
+        }
     }
 
     /**
