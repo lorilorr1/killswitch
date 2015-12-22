@@ -1,11 +1,16 @@
 <?php
 
 /**
- * Add the URL that will return either true  or false in the body
- *
- * true  = kill switch activated and Laravel App will be put into maintenance mode
- * false = kill switch not activated and Laravel App will continue as normal.
+ * KillSwitch Configuration
  */
 return [
-    'url' => 'http://foo'
+    /**
+     * URL supplying true or false
+     */
+    'url'       => 'http://foo',
+
+    /**
+     * Number of seconds before silently giving up on http request to kill switch
+     */
+    'timeout'   => 1.5
 ];

@@ -20,13 +20,18 @@ class KillSwitch {
     /**
      * KillSwitch constructor.
      * @param null $url
+     * @param float $timeout
      */
-    public function __construct($url = null)
+    public function __construct($url = null, $timeout = 1.5)
     {
         $this->status = false;
 
         if (!is_null($url)) {
-            $this->http = new Client(['base_uri' => $url,  'timeout' => 1.5]);
+            $this->http = new Client([
+                'base_uri' => $url,
+                'timeout' => $timeout
+            ]);
+
             $this->readStatusFromHttpRequest();
         }
     }
