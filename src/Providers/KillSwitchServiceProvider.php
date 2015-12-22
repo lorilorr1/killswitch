@@ -14,7 +14,7 @@ class KillSwitchServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/src/config' => base_path('config'),
+            __DIR__ . '../config' => base_path('config'),
         ]);
 
         if ($this->app['ks']->status() === true) {
