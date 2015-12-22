@@ -15,9 +15,8 @@
         }
     },
 
-    "minimum-stability": "dev",
-
     "require": {
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0",
+        "GuzzleHttp/Guzzle": "^6.1"
     }
 }

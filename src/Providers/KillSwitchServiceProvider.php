@@ -1,6 +1,7 @@
 <?php namespace KillSwitch\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use KillSwitch\KillSwitch;
 
 class KillSwitchServiceProvider extends ServiceProvider {
 
@@ -11,7 +12,9 @@ class KillSwitchServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        dd('caught in the boot');
+        dd($this->app['ks']);
+        // KillSwitch::query()
+        // if query() == false then run command php artisan down
     }
 
     /**
@@ -21,7 +24,8 @@ class KillSwitchServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        //
+        $ks = new KillSwitch(config('killswitch.url'));
+        $this->app->instance('ks', $ks);
     }
 
 }
