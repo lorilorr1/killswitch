@@ -1,7 +1,7 @@
 # Laravel KillSwitch
 
 As web professionals it's a sad fact that some clients just don't want to pay once your hard-work goes live, you need 
-leverage.  In it's basic implementation, KillSwitch is a custom middleware that will make a HTTP GET request to a 
+leverage.  In it's basic implementation, KillSwitch is a custom module that will make a HTTP GET request to a 
 specified URL, if that request returns `true` in the body of the request then the switch is activated and the site 
 placed into maintenance mode.
 
@@ -13,10 +13,6 @@ website operations, your application is NOT dependant on this URL to function.
 * Install via composer `composer require bagwaa/killswitch`
 * Add `KillSwitch\Providers\KillSwitchServiceProvider::class` to the providers array in  `config\app.php`
 * Publish the configuration file with sensible defaults `php artisan vendor:publish` 
-* Add the `KillSwitch\Middleware\KillSwitchMiddleware::class` to the middleware array in `app\Http\Kernel.php`
-
-As an optional step, you may decide to add the middleware to the `$routeMiddleware` array in `app\Http\Kernel.php` 
-which will then allow you to register this on specific routes instead of every single route.
 
 ### Configuration
 
